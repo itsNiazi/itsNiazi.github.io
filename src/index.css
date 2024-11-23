@@ -1,0 +1,56 @@
+/* Table of Contents
+   1. CSS Reset
+   x. Layout
+*/
+
+/*=====================================
+=             CSS Reset               =
+=====================================*/
+*,
+*::before,
+*::after,
+*:focus {
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+
+// Prevent font size inflation
+html {
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+// Shorter line height for headings and interactive elements
+h1,
+h2,
+h3,
+h4,
+input,
+label,
+button {
+  line-height: 1.1;
+}
+
+// Inherit fonts for inputs and buttons
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+img,
+picture {
+  max-width: 100%;
+}
