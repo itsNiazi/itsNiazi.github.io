@@ -1,8 +1,30 @@
 ---
-
+import "../styles/global.css";
 ---
 
 <nav>
   <a href="/">About</a>
   <a href="/articles">Articles</a>
+  <a href="/articles">Reads</a>
 </nav>
+
+<style>
+  nav {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--component-bg-clr);
+    border: 2px solid var(--system-font-clr);
+    min-height: 40px;
+    width: 380px;
+    margin-inline: auto;
+  }
+
+  a {
+    color: var(--system-font-clr);
+  }
+  a:hover {
+    text-decoration-line: underline;
+  }
+</style>

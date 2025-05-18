@@ -1,0 +1,46 @@
+---
+import { myConfig } from "../config/myConfig";
+---
+
+<header>
+  <figure>
+    <img id="avatar" src="/avatar.png" width="100" />
+    <div id="socials">
+      <a href={myConfig.social.linkedin}><img src="/iLinkedin.svg" alt="Linkedin Icon" width="20" /></a>
+      <a href={myConfig.social.github}><img src="/iGithub.svg" alt="Github Icon" width="20" /></a>
+    </div>
+  </figure>
+</header>
+
+<style>
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 2px solid black;
+    margin-inline: auto;
+    margin-block: 15px;
+    width: 835px;
+    min-height: 145px;
+  }
+
+  #avatar {
+    border: 0.15rem solid black;
+    border-radius: 50%;
+  }
+
+  #socials {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  #socials > a > img {
+    transition: filter 0.2s ease;
+  }
+
+  #socials > a > img:hover {
+    filter: brightness(0.3); /* darkens the image */
+  }
+</style>

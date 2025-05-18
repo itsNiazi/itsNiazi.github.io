@@ -1,11 +1,10 @@
 ---
-import { myConfig } from "../config/myConfig";
+import Hero from "../components/Hero.astro";
+import Terminal from "../components/Terminal.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-// Welcome to Astro! Everything between these triple-dash code fences
-// is your "component frontmatter". It never runs in the browser.
-console.log("This runs in your terminal, not the browser!");
 ---
 
-<BaseLayout title="Home">
-  {myConfig.role}
+<BaseLayout title="Home & About">
+  <Hero />
+  <Terminal />
 </BaseLayout>

@@ -1,0 +1,42 @@
+<section>
+  <div id="menu-bar">
+    <div class="rd red"></div>
+    <div class="rd yellow"></div>
+    <div class="rd green"></div>
+  </div>
+</section>
+
+<style>
+  section {
+    background-color: white;
+    border: 2px solid black;
+    margin-inline: auto;
+    margin-block: 15px;
+    width: 550px;
+    height: 275px;
+  }
+
+  #menu-bar {
+    display: flex;
+    border-bottom: 2px solid black;
+  }
+
+  .rd {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 4px;
+  }
+
+  .red {
+    background-color: #ff5f56; /* Red for close button */
+  }
+
+  .yellow {
+    background-color: #febc2e; /* Yellow for minimize button */
+  }
+
+  .green {
+    background-color: #28c840; /* Green for enlarge button */
+  }
+</style>
