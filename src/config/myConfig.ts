@@ -1,7 +1,7 @@
 export const myConfig = {
   name: "Tareq Niazi",
-  role: "Software Developer - Fullstack",
-  subRole: "Information Architect",
+  occupation: "Software Developer - Fullstack",
+  role: "Information Architect",
   location: "Malmö, Sweden",
   age: new Date().getFullYear() - 1996,
   social: { linkedin: "", github: "" },
