@@ -1,0 +1,52 @@
+/* CSS Reset */
+*,
+*::before,
+*::after,
+*:focus {
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Prevents font size inflation */
+html {
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+html,
+body {
+  min-height: 100vh;
+  max-width: 100vw;
+  overflow-x: hidden;
+  line-height: 1.5;
+}
+
+/* Shorter line height for headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+input,
+label,
+button {
+  line-height: 1.1;
+}
+
+/* Inherit font for inputs and buttons */
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+img,
+picture {
+  max-width: 100%;
+}

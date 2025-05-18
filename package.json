@@ -1,0 +1,16 @@
+{
+  "name": "itsniazi.github.io",
+  "version": "1.0.0",
+  "description": "Portfolio/Blog",
+  "main": "index.js",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "author": "Tareq Niazi",
+  "license": "ISC",
+  "dependencies": {
+    "astro": "^5.7.13"
+  }
+}

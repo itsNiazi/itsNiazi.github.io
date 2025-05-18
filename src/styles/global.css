@@ -1,0 +1,10 @@
+:root {
+  --system-bg-clr: #ebebeb;
+  --system-font-clr: #000000;
+  --component-bg-clr: #ffffff;
+}
+
+html {
+  background-color: var(--system-bg-clr);
+  font-family: "Ubuntu";
+}
