@@ -24,7 +24,16 @@ import "../styles/global.css";
   a {
     color: var(--system-font-clr);
   }
+
   a:hover {
     text-decoration-line: underline;
+  }
+
+  @media (width <= 900px) {
+    nav {
+      flex-direction: column;
+      padding-block: 10px;
+      width: 350px;
+    }
   }
 </style>
