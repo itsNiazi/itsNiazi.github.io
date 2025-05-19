@@ -4,7 +4,52 @@
     <div class="rd yellow"></div>
     <div class="rd green"></div>
   </div>
+  <div id="terminal">
+    <div id="output"></div>
+    <span class="prompt">~<input id="input" type="text" autofocus /></span>
+  </div>
 </section>
+
+<script>
+  function clearTerminal() {
+    while (outputDiv.firstChild) {
+      outputDiv.removeChild(outputDiv.firstChild);
+    }
+    terminalDiv.scrollTop = terminalDiv.scrollHeight;
+  }
+
+  const inputDiv = document.getElementById("input");
+  const outputDiv = document.getElementById("output");
+  const terminalDiv = document.getElementById("terminal");
+  (inputDiv as HTMLInputElement).value = "";
+
+  document.getElementById("terminal").addEventListener("click", () => {
+    inputDiv.focus();
+  });
+
+  inputDiv.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+      const input = (e.target as HTMLInputElement).value.trim();
+      if (input === "") return;
+
+      outputDiv.innerHTML += `<div style="margin-top: 0.35rem"><span style="color:#ff5f56; margin-right:0.5rem;">~</span>${input}</div>`;
+
+      switch (input) {
+        case "whoami":
+          outputDiv.innerHTML += `<div>I'm Tareq!</div>`;
+          break;
+        case "clear":
+          clearTerminal();
+          break;
+        default:
+          outputDiv.innerHTML += `<div>Command not found: ${input}</div>`;
+      }
+      (e.target as HTMLInputElement).value = "";
+      outputDiv.scrollTop = outputDiv.scrollHeight;
+      terminalDiv.scrollTop = terminalDiv.scrollHeight;
+    }
+  });
+</script>
 
 <style>
   section {
@@ -38,6 +83,29 @@
 
   .green {
     background-color: #28c840; /* Green for enlarge button */
+  }
+  #terminal {
+    overflow: auto;
+    height: 90%;
+  }
+
+  input {
+    border: none;
+    margin-inline: 0.5rem;
+    margin-block: 0.5rem;
+  }
+
+  div > span {
+    font-size: 1rem;
+    margin-inline: 0.5rem;
+  }
+
+  #output {
+    margin-inline: 0.5rem;
+  }
+
+  .prompt {
+    color: #ff5f56;
   }
 
   @media (width <= 900px) {
