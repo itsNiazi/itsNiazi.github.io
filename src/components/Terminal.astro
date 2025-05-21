@@ -1,3 +1,7 @@
+---
+
+---
+
 <section>
   <div id="menu-bar">
     <div class="rd red"></div>
@@ -11,17 +15,18 @@
 </section>
 
 <script>
+  const inputDiv = document.getElementById("input");
+  const outputDiv = document.getElementById("output");
+  const terminalDiv = document.getElementById("terminal");
+
+  (inputDiv as HTMLInputElement).value = "";
+
   function clearTerminal() {
     while (outputDiv.firstChild) {
       outputDiv.removeChild(outputDiv.firstChild);
     }
     terminalDiv.scrollTop = terminalDiv.scrollHeight;
   }
-
-  const inputDiv = document.getElementById("input");
-  const outputDiv = document.getElementById("output");
-  const terminalDiv = document.getElementById("terminal");
-  (inputDiv as HTMLInputElement).value = "";
 
   document.getElementById("terminal").addEventListener("click", () => {
     inputDiv.focus();
@@ -34,16 +39,20 @@
 
       outputDiv.innerHTML += `<div style="margin-top: 0.35rem"><span style="color:#ff5f56; margin-right:0.5rem;">~</span>${input}</div>`;
 
-      switch (input) {
+      switch (input.toLocaleLowerCase()) {
         case "whoami":
           outputDiv.innerHTML += `<div>I'm Tareq!</div>`;
           break;
         case "clear":
           clearTerminal();
           break;
+        case "--help":
+          outputDiv.innerHTML += `<p>You can type the following commands: <b>whoami, clear</b></p>`;
+          break;
         default:
-          outputDiv.innerHTML += `<div>Command not found: ${input}</div>`;
+          outputDiv.innerHTML += `<div>command not found: ${input}</div>`;
       }
+
       (e.target as HTMLInputElement).value = "";
       outputDiv.scrollTop = outputDiv.scrollHeight;
       terminalDiv.scrollTop = terminalDiv.scrollHeight;
@@ -74,16 +83,17 @@
   }
 
   .red {
-    background-color: #ff5f56; /* Red for close button */
+    background-color: #ff5f56;
   }
 
   .yellow {
-    background-color: #febc2e; /* Yellow for minimize button */
+    background-color: #febc2e;
   }
 
   .green {
-    background-color: #28c840; /* Green for enlarge button */
+    background-color: #28c840;
   }
+
   #terminal {
     overflow: auto;
     height: 90%;
@@ -103,7 +113,6 @@
   #output {
     margin-inline: 0.5rem;
   }
-
   .prompt {
     color: #ff5f56;
   }
