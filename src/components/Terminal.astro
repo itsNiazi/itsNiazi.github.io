@@ -15,6 +15,8 @@
 </section>
 
 <script>
+  import { commands } from "../config/terminalConfig";
+
   const inputDiv = document.getElementById("input");
   const outputDiv = document.getElementById("output");
   const terminalDiv = document.getElementById("terminal");
@@ -28,32 +30,40 @@
     terminalDiv.scrollTop = terminalDiv.scrollHeight;
   }
 
-  document.getElementById("terminal").addEventListener("click", () => {
+  terminalDiv.addEventListener("click", () => {
     inputDiv.focus();
   });
 
   inputDiv.addEventListener("keydown", function (e) {
     if (e.key === "Enter") {
       const input = (e.target as HTMLInputElement).value.trim();
-      if (input === "") return;
+      const lowerCaseInput = input.toLocaleLowerCase();
+      if (lowerCaseInput === "") return;
 
-      outputDiv.innerHTML += `<div style="margin-top: 0.35rem"><span style="color:#ff5f56; margin-right:0.5rem;">~</span>${input}</div>`;
+      outputDiv.innerHTML += `<div style="margin-top: 0.35rem;"><span style="color:#ff5f56; margin-right:0.5rem;">~</span>${input}</div>`;
 
-      switch (input.toLocaleLowerCase()) {
-        case "whoami":
-          outputDiv.innerHTML += `<div>I'm Tareq!</div>`;
-          break;
-        case "clear":
-          clearTerminal();
-          break;
-        case "--help":
-          outputDiv.innerHTML += `<p>You can type the following commands: <b>whoami, clear</b></p>`;
-          break;
-        default:
-          outputDiv.innerHTML += `<div>command not found: ${input}</div>`;
+      function terminalOutput() {
+        if (lowerCaseInput in commands) {
+          outputDiv.innerHTML += `<div>${commands[lowerCaseInput].response}</div>`;
+          outputDiv.innerHTML += `<br/>`;
+
+          outputDiv.innerHTML += `<div style="color:#707070;">suggested command: <b>${commands[lowerCaseInput].suggestedCommand}</b></div>`;
+        } else {
+          outputDiv.innerHTML += `<div>command not found: ${input}`;
+        }
       }
 
       (e.target as HTMLInputElement).value = "";
+
+      switch (lowerCaseInput) {
+        case "clear":
+          clearTerminal();
+          break;
+        default:
+          terminalOutput();
+          break;
+      }
+
       outputDiv.scrollTop = outputDiv.scrollHeight;
       terminalDiv.scrollTop = terminalDiv.scrollHeight;
     }
