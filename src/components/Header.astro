@@ -1,10 +1,13 @@
 ---
 import { myConfig } from "../config/myConfig";
+import { Image } from "astro:assets";
+import avatar from "../images/avatar.png";
 ---
 
 <header>
   <figure>
-    <img id="avatar" src="/avatar.png" alt="Avatar" width="100" />
+    <Image id="avatar" src={avatar} alt="Avatar." width={100} height={100} loading="eager" />
+    <!-- <img id="avatar" src="/avatar.png" alt="Avatar" width="100" /> -->
     <div id="socials">
       <a href={myConfig.social.linkedin} target="_blank"><img src="/iLinkedin.svg" alt="Linkedin Icon" width="20" /></a>
       <a href={myConfig.social.github} target="_blank"><img src="/iGithub.svg" alt="Github Icon" width="20" /></a>
