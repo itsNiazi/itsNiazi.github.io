@@ -16,8 +16,11 @@ import avatar from "../images/avatar.png";
       format="avif"
       quality={"high"}
       style="width: 100px; height: auto;"
+      priority
     />
-    <!-- <img id="avatar" src="/avatar.png" alt="Avatar" width="100" /> -->
+    <!-- remove inline style attribute ^ -->
+    <!-- Find solution for why avatar refreshing on mobile! -->
+    <!-- <img id="avatar" src="/avatar.png" alt="Avatar" width="100" />  (also delete avatar in public folder?)-->
     <div id="socials">
       <a href={myConfig.social.linkedin} target="_blank"><img src="/iLinkedin.svg" alt="Linkedin Icon" width="20" /></a>
       <a href={myConfig.social.github} target="_blank"><img src="/iGithub.svg" alt="Github Icon" width="20" /></a>
