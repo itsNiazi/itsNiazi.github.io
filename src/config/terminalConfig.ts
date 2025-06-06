@@ -8,7 +8,7 @@ export const terminalConfig = {
 
 export const commands = {
   "--help": {
-    response: `You can type the following commands: </br>  <b>whoami, education, links, clear</b> `,
+    response: `You can type the following commands: </br>  <b>whoami, education, links, clear</b> </br> <b>toggle-theme</b> `,
     suggestedCommand: "whoami",
   },
   whoami: {
