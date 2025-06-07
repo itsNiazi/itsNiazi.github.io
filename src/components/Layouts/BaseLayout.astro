@@ -1,8 +1,9 @@
 ---
-import "../styles/reset.css";
-import "../styles/global.css";
-import NavigBar from "../components/NavigBar.astro";
-import Header from "../components/Header.astro";
+import "../../styles/reset.css";
+import "../../styles/global.css";
+
+import NavigBar from "../Base/UI/NavigBar.astro";
+import Header from "../Base/UI/Header.astro";
 const { title } = Astro.props;
 const description = "TBD";
 ---
@@ -14,6 +15,7 @@ const description = "TBD";
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <title>{title}</title>
+
     <script>
       // Check user's preference from localStorage or system preference
       const savedTheme = localStorage.getItem("theme");

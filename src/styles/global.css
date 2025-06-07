@@ -10,20 +10,22 @@
   --system-bg-clr: #ebebeb;
   --system-font-clr: #000000;
   --component-bg-clr: #ffffff;
+  --component-font-clr: #000000;
 }
 
 [data-theme="dark"] {
   --system-bg-clr: #1a1a1a;
   --system-font-clr: #f4f4f4;
-  --component-bg-clr: #6366f1;
+  --component-bg-clr: #5c5d6c;
+  --component-font-clr: #f4f4f4;
 }
 
 html {
   background-color: var(--system-bg-clr);
-  font-family: "Ubuntu";
+  font-family: "Ubuntu", Georgia;
 }
 
 html.dark {
-  background-color: #2f2f2f;
-  color: black;
+  background-color: var(--system-bg-clr);
+  color: var(--system-font-clr);
 }

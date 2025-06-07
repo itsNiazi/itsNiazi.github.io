@@ -1,0 +1,28 @@
+---
+import BaseLayout from "../../components/Layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const articles = await getCollection("articles");
+---
+
+<BaseLayout title="Article">
+  <ul>
+    {
+      articles.map((article) => (
+        <li>
+          <a href={`/articles/${article.id}`}>{article.data.title}</a>
+          <p>{article.data.description}</p>
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout>
+
+<style>
+  ul {
+    color: var(--component-bg-clr);
+  }
+  a {
+    color: var(--system-font-clr);
+  }
+</style>

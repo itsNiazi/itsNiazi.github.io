@@ -1,7 +1,7 @@
 ---
-import { myConfig } from "../config/myConfig";
+import { myConfig } from "../../../config/myConfig";
 import { Image } from "astro:assets";
-import avatar from "../images/avatar.png";
+import avatar from "../../../images/avatar.png";
 ---
 
 <header>
@@ -35,11 +35,12 @@ import avatar from "../images/avatar.png";
 
 <style>
   header {
+    color: var(--component-font-clr);
+    background-color: var(--component-bg-clr);
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: white;
-    border: 2px solid black;
+    border: 2px solid var(--component-font-clr);
     margin-inline: auto;
     margin-block: 15px;
     width: 835px;
@@ -47,7 +48,7 @@ import avatar from "../images/avatar.png";
   }
 
   #avatar {
-    border: 0.15rem solid black;
+    border: 0.15rem solid var(--component-font-clr);
     border-radius: 50%;
   }
 

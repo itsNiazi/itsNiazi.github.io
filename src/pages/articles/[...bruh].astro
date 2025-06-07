@@ -1,0 +1,21 @@
+---
+import { getCollection, render } from "astro:content";
+import ArticleLayout from "../../components/Layouts/ArticleLayout.astro";
+
+/** 1. Generate dynamic paths for every article */
+export async function getStaticPaths() {
+  const articles = await getCollection("articles");
+  return articles.map((article) => ({
+    params: { bruh: article.id },
+    props: { article },
+  }));
+}
+
+/** 2. Extract metadata and content */
+const { article } = Astro.props;
+const { Content } = await render(article);
+---
+
+<ArticleLayout article={article}>
+  <Content />
+</ArticleLayout>

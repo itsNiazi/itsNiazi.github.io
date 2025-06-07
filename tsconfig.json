@@ -1,3 +1,11 @@
+/** 
+[1] Content collections rely on TypeScript to provide Zod validation, Intellisense and type checking.
+*/
+
 {
-  "extends": "astro/tsconfigs/base"
+  "extends": "astro/tsconfigs/base",
+  "compilerOptions": {
+    "strictNullChecks": true, // [1]
+    "allowJs": true //  [1]
+  }
 }
