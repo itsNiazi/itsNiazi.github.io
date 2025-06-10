@@ -1,31 +1,9 @@
----
-import BaseLayout from "./BaseLayout.astro";
-import Wrapper from "../Base/Common/wrapper.astro";
-
-const { article } = Astro.props;
-const title = article.data.title;
----
-
-<BaseLayout title={title}>
-  <article>
-    <Wrapper>
-      <h1>{title}</h1>
-      <p>Written by {article.data.author}</p>
-      <slot />
-    </Wrapper>
-  </article>
-</BaseLayout>
+<article>
+  <slot />
+</article>
 
 <style>
-  h1 {
-    color: var(--system-font-clr);
-  }
-
-  p {
-    color: var(--system-font-clr-muted);
-  }
-
-  /* article {
+  article {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -48,5 +26,5 @@ const title = article.data.title;
     article {
       width: 350px;
     }
-  } */
+  }
 </style>

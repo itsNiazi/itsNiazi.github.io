@@ -47,8 +47,9 @@
           outputDiv.innerHTML += `<div style="color:var(--system-font-clr);">${commands[lowerCaseInput].response}</div>`;
           outputDiv.innerHTML += `<br/>`;
 
-          // outputDiv.innerHTML += `<div style="color:#707070;">suggested command: <b>${commands[lowerCaseInput].suggestedCommand}</b></div>`;
-          outputDiv.innerHTML += `<div style="color:var(--system-font-clr);">suggested command: <b>${commands[lowerCaseInput].suggestedCommand}</b></div>`;
+          commands[lowerCaseInput].suggestedCommand
+            ? (outputDiv.innerHTML += `<div style="color:var(--system-font-clr-muted);">suggested command: <b>${commands[lowerCaseInput].suggestedCommand}</b></div>`)
+            : "";
         } else {
           outputDiv.innerHTML += `<div style="color:var(--system-font-clr);">command not found: ${input}`;
         }
@@ -125,7 +126,7 @@
     margin-inline: 0.5rem;
     margin-block: 0.5rem;
     background-color: var(--component-bg-clr);
-    color: var(--component-font-clr);
+    color: var(--system-font-clr);
   }
 
   div > label {

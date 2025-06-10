@@ -9,15 +9,15 @@
 :root {
   --system-bg-clr: #ebebeb;
   --system-font-clr: #000000;
+  --system-font-clr-muted: #5c5d6c;
   --component-bg-clr: #ffffff;
-  --component-font-clr: #000000;
 }
 
 [data-theme="dark"] {
   --system-bg-clr: #1a1a1a;
   --system-font-clr: #f4f4f4;
+  --system-font-clr-muted: #f4f4f4;
   --component-bg-clr: #5c5d6c;
-  --component-font-clr: #f4f4f4;
 }
 
 html {
