@@ -14,14 +14,7 @@ const description = "TBD";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    <script>
-      // Check user's preference from localStorage or system preference
-      const savedTheme = localStorage.getItem("theme");
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      const theme = savedTheme || (prefersDark ? "dark" : "light");
-      document.documentElement.setAttribute("data-theme", theme);
-    </script>
-
+    <script src="/src/utils/theme.js"></script>
     <title>{title}</title>
   </head>
   <body>
