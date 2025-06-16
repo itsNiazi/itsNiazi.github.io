@@ -7,9 +7,9 @@ const { articles } = Astro.props;
 <script>
   const button = document.getElementById("randomArticleBtn");
   const articles = JSON.parse(button.dataset.articlesJson);
-  const randNumber = Math.floor(Math.random() * articles.length);
 
   button.addEventListener("click", () => {
+    const randNumber = Math.floor(Math.random() * articles.length);
     window.location.href = `/articles/${articles[randNumber].id}`;
   });
 </script>
