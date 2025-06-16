@@ -2,15 +2,15 @@
 const { articles } = Astro.props;
 ---
 
-<a id="random-article-button" data-articles-json={JSON.stringify(articles)}> Read a Random Article </a>
+<a id="randomArticleBtn" data-articles-json={JSON.stringify(articles)}>Random Article!</a>
 
 <script>
-  const button = document.getElementById("random-article-button");
+  const button = document.getElementById("randomArticleBtn");
   const articles = JSON.parse(button.dataset.articlesJson);
-  const number = Math.floor(Math.random() * articles.length);
+  const randNumber = Math.floor(Math.random() * articles.length);
 
   button.addEventListener("click", () => {
-    window.location.href = `/articles/${articles[number].id}`;
+    window.location.href = `/articles/${articles[randNumber].id}`;
   });
 </script>
 
