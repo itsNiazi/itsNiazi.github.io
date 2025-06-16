@@ -4,15 +4,9 @@ import ArticleCard from "../../components/Base/Services/Articles/ArticleCard.ast
 import BaseLayout from "../../components/Layouts/BaseLayout.astro";
 import RandomArticleBtn from "../../components/Base/Services/Articles/RandomArticleBtn.astro";
 import { getCollection } from "astro:content";
-import { getFormattedDate, getReadTime, getRandomNumber } from "../../utils/utils";
+import { getFormattedDate, getReadTime } from "../../utils/utils";
 
 const articles = await getCollection("articles");
-// const randomNumber = getRandomNumber(0, articles.length - 1);
-// console.log(articles.length);
-// const randomArticle = articles[randomNumber];
-// console.log(randomNumber);
-// console.log(randomArticle);
-// console.log(randomNumber.id);
 ---
 
 <!-- Needs pagination -->
@@ -29,23 +23,12 @@ const articles = await getCollection("articles");
         ))
       }
     </ul>
-    <!-- <a href={`/articles/${randomArticle.id}`}>Random Article!</a> -->
     <RandomArticleBtn articles={articles} />
-
-    <!-- <a href={`/articles/${articles[getRandomNumber(0, articles.length - 1)].id}`}>Random Article!</a> -->
   </Wrapper>
 </BaseLayout>
 
 <style>
-  button {
-    background-color: var(--component-bg-clr);
-
-    padding: 8px;
-    border: solid 2px var(--system-font-clr);
-    transition: background-color 0.2s ease;
-  }
-  button:hover {
-    background-color: var(--system-bg-clr);
-    cursor: pointer;
+  ul {
+    margin-bottom: 15px;
   }
 </style>
