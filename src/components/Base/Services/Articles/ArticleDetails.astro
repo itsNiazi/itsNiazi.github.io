@@ -1,0 +1,51 @@
+---
+import avatar from "../../../../images/avatar.png";
+import { Image } from "astro:assets";
+
+const { author, title, date, readTime } = Astro.props;
+---
+
+<article>
+  <h1>{title}</h1>
+  <figure>
+    <Image
+      class="avatar"
+      src={avatar}
+      alt="Pixel art avatar of myself"
+      sizes="100px"
+      format="avif"
+      quality={"high"}
+      style="width: 25px; height: auto;"
+      loading="eager"
+      priority
+    />
+    <p>Written by {author}</p>
+    <p>{date.toDateString()} — {readTime} min read</p>
+  </figure>
+</article>
+
+<style>
+  h1,
+  figure {
+    text-align: center;
+  }
+
+  article > figure {
+    margin-block: 10px;
+  }
+
+  article > figure > p {
+    color: var(--system-font-clr-muted);
+  }
+
+  .avatar {
+    border: 0.1rem solid var(--system-font-clr);
+    border-radius: 50%;
+    opacity: 0.4;
+    transition: opacity 0.4s ease;
+  }
+
+  .avatar:hover {
+    opacity: 1;
+  }
+</style>
