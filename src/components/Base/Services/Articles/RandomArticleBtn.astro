@@ -1,0 +1,29 @@
+---
+const { articles } = Astro.props;
+---
+
+<button id="random-article-button" data-articles-json={JSON.stringify(articles)}> Random Article! </button>
+
+<script>
+  const button = document.getElementById("random-article-button");
+  const articles = JSON.parse(button.dataset.articlesJson);
+  const randNumber = Math.floor(Math.random() * articles.length);
+
+  button.addEventListener("click", () => {
+    window.location.href = `/articles/${articles[randNumber].id}`;
+  });
+</script>
+
+<style>
+  button {
+    background-color: var(--component-bg-clr);
+
+    padding: 8px;
+    border: solid 2px var(--system-font-clr);
+    transition: background-color 0.2s ease;
+  }
+  button:hover {
+    background-color: var(--system-bg-clr);
+    cursor: pointer;
+  }
+</style>

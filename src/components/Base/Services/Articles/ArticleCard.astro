@@ -1,0 +1,48 @@
+---
+const { article, readTime, date } = Astro.props;
+const { title, description } = article.data;
+---
+
+<li>
+  <a href={`/articles/${article.id}`}>
+    <p>{title}</p>
+    <figure class="test">
+      <time>| {date} | {readTime} min read</time>
+    </figure>
+  </a>
+</li>
+<style>
+  li {
+    padding: 5px;
+    border-bottom: 2px solid var(--system-font-clr);
+    width: 400px; /* wrong to use width here, it should be agnostic */
+    margin-block: 5px;
+  }
+
+  li:hover {
+    background-color: var(--system-bg-clr);
+    cursor: pointer;
+  }
+
+  li > a {
+    word-break: keep-all;
+    color: var(--system-font-clr);
+    width: 100%;
+  }
+
+  figure {
+    min-width: 200px;
+    text-align: end;
+    color: var(--system-font-clr-muted);
+  }
+
+  li > a > p {
+    color: var(--system-font-clr);
+  }
+
+  @media (width <= 900px) {
+    li {
+      width: 300px;
+    }
+  }
+</style>

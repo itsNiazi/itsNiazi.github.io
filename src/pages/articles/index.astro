@@ -1,31 +1,51 @@
 ---
 import Wrapper from "../../components/Base/Common/Wrapper.astro";
+import ArticleCard from "../../components/Base/Services/Articles/ArticleCard.astro";
 import BaseLayout from "../../components/Layouts/BaseLayout.astro";
+import RandomArticleBtn from "../../components/Base/Services/Articles/RandomArticleBtn.astro";
 import { getCollection } from "astro:content";
+import { getFormattedDate, getReadTime, getRandomNumber } from "../../utils/utils";
 
 const articles = await getCollection("articles");
+// const randomNumber = getRandomNumber(0, articles.length - 1);
+// console.log(articles.length);
+// const randomArticle = articles[randomNumber];
+// console.log(randomNumber);
+// console.log(randomArticle);
+// console.log(randomNumber.id);
 ---
 
+<!-- Needs pagination -->
 <BaseLayout title="Article">
   <Wrapper>
     <ul>
       {
         articles.map((article) => (
-          <li>
-            <a href={`/articles/${article.id}`}>{article.data.title}</a>
-            <p>{article.data.description}</p>
-          </li>
+          <ArticleCard
+            article={article}
+            readTime={getReadTime(article.body)}
+            date={getFormattedDate(article.data.pubDate)}
+          />
         ))
       }
     </ul>
+    <!-- <a href={`/articles/${randomArticle.id}`}>Random Article!</a> -->
+    <RandomArticleBtn articles={articles} />
+
+    <!-- <a href={`/articles/${articles[getRandomNumber(0, articles.length - 1)].id}`}>Random Article!</a> -->
   </Wrapper>
 </BaseLayout>
 
 <style>
-  li > p {
-    color: var(--system-font-clr-muted);
+  button {
+    background-color: var(--component-bg-clr);
+
+    padding: 8px;
+    border: solid 2px var(--system-font-clr);
+    transition: background-color 0.2s ease;
   }
-  li > a {
-    color: var(--system-font-clr);
+  button:hover {
+    background-color: var(--system-bg-clr);
+    cursor: pointer;
   }
 </style>
