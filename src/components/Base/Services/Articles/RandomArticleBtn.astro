@@ -1,10 +1,18 @@
 ---
-import { getRandomNumber } from "../../../../utils/utils";
-
 const { articles } = Astro.props;
 ---
 
-<a href={`/articles/${articles[getRandomNumber(0, articles.length - 1)].id}`}>Random Article!</a>
+<a id="random-article-button" data-articles-json={JSON.stringify(articles)}> Read a Random Article </a>
+
+<script>
+  const button = document.getElementById("random-article-button");
+  const articles = JSON.parse(button.dataset.articlesJson);
+  const number = Math.floor(Math.random() * articles.length);
+
+  button.addEventListener("click", () => {
+    window.location.href = `/articles/${articles[number].id}`;
+  });
+</script>
 
 <style>
   a {
