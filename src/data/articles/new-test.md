@@ -1,5 +1,5 @@
 ---
-title: "Second Test"
+title: "Test [Placeholder]"
 description: "A test"
 author: "Tareq"
 pubDate: "2025-06-06"

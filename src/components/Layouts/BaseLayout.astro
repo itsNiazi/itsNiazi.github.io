@@ -4,8 +4,9 @@ import "../../styles/global.css";
 
 import NavigBar from "../Base/UI/NavigBar.astro";
 import Header from "../Base/UI/Header.astro";
-const { title } = Astro.props;
-const description = "TBD";
+
+const { title, description } = Astro.props;
+const content = description || "TBD";
 ---
 
 <!doctype html>
@@ -13,7 +14,7 @@ const description = "TBD";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content={description} />
+    <meta name="description" content={content} />
     <script src="/src/utils/theme.js"></script>
     <title>{title}</title>
   </head>

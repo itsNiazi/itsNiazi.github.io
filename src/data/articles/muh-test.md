@@ -1,5 +1,5 @@
 ---
-title: "Why I Started Writing?"
+title: "Algorithms [Placeholder]"
 description: "A test dwawda dw wad  wda dwa dwa wd w d dw awd awd awd aw wad  wad dw awd adw a dw awd awd awd dw a awd "
 author: "Tareq"
 pubDate: "2025-06-06"
@@ -8,6 +8,8 @@ pubDate: "2025-06-06"
 ## Why
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fermentum sapien non justo vehicula fringilla. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam posuere sem vitae metus pellentesque, nec aliquam diam mollis. Mauris efficitur, sem et sollicitudin ornare, sem arcu egestas est, at imperdiet massa erat at lectus. Maecenas aliquet tempor posuere. Pellentesque sit amet felis porta, porta nisl rhoncus, faucibus orci. Donec id turpis eu massa ullamcorper commodo. Integer dapibus libero mauris, sit amet dapibus magna auctor et. Vivamus posuere lacinia massa, ac ultricies purus cursus quis. Proin placerat purus nisl, id laoreet libero venenatis quis. Donec euismod bibendum lorem, et eleifend ligula porta ut. Praesent quam sapien, scelerisque et tempor sed, hendrerit ut ligula. Praesent bibendum mi eget pellentesque tincidunt. Mauris mattis commodo massa vel posuere. Nullam tristique dui purus, quis molestie elit bibendum at. Aliquam nec rutrum arcu, venenatis egestas nisi.
+
+![Avatar](../../images/big-o.png)
 
 ## How
 

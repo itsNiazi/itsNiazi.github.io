@@ -1,17 +1,19 @@
 ---
+import "../../styles/article.css";
 import BaseLayout from "./BaseLayout.astro";
 import Wrapper from "../Base/Common/Wrapper.astro";
 import ArticleDetails from "../Base/Services/Articles/ArticleDetails.astro";
 import { getFormattedDate, getReadTime } from "../../utils/utils";
 
 const { article } = Astro.props;
-const { title, pubDate } = article.data;
+const { title, pubDate, description } = article.data;
+console.log(description);
 
 const readTime = getReadTime(article.body);
 const date = getFormattedDate(pubDate);
 ---
 
-<BaseLayout title={title}>
+<BaseLayout title={title} description={description}>
   <Wrapper>
     <ArticleDetails article={article} date={date} readTime={readTime} />
     <slot />
